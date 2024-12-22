@@ -44,7 +44,7 @@ function Post() {
 
     const deletePost = (id) => {
         console.log(id);
-        axios.delete(`http://localhost:3002/gameposts/byId/${id}`).then((response) => {
+        axios.delete(`https://khami-kave-server.onrender.com//gameposts/byId/${id}`).then((response) => {
             navigate("/");
         })
     }
@@ -57,11 +57,11 @@ function Post() {
     });
 
     useEffect(() => {
-        axios.get(`http://localhost:3002/gameposts/byId/${id}`).then((response) => {
+        axios.get(`https://khami-kave-server.onrender.com//gameposts/byId/${id}`).then((response) => {
             setPostObject(response.data);
         });
 
-        axios.get(`http://localhost:3002/comments/${id}`).then((response) => {
+        axios.get(`https://khami-kave-server.onrender.com//comments/${id}`).then((response) => {
             setComments(response.data);
         });
     }, [id]);
