@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 
-const { backendURL } = require('./componenets/constants');
+const { backendURL } = require('./components/constants');
 
 
 function CreateReview() {

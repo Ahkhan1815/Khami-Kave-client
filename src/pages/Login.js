@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const { backendURL } = require('./componenets/constants');
+const { backendURL } = require('./components/constants');
 
 function Login() {
     const [username, setUsername] = useState("");

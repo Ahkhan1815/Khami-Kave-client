@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemsGrid from './ItemsGrid';
 
-const { backendURL } = require('./componenets/constants');
+const { backendURL } = require('./components/constants');
 
 function Home() {
     const [listOfPosts, setListOfPosts] = useState([]);

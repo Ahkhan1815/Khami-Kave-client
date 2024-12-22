@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { jwtDecode } from "jwt-decode";
 
-const { backendURL } = require('./componenets/constants');
+const { backendURL } = require('./components/constants');
 
 function Post() {
     let { id } = useParams();

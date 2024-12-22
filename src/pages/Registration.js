@@ -5,7 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from 'react-router-dom';
 
-const { backendURL } = require('./componenets/constants');
+const { backendURL } = require('./components/constants');
 
 function Registration() {
     const initialValues = {
