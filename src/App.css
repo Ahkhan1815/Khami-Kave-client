@@ -1,38 +1,211 @@
 .App {
-  text-align: center;
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  background-color: #192841;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body{
+  padding-top: 40px;
+  margin: 0;
+  background-color: #192841;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.type-banner{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  color: #0ea1db;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header{
+  background-color: #152238;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #0ea1db;
+}
+
+.websiteTitle{
+  color: #ffc107;
+  white-space: nowrap;
+  font-size: 30px;
+  margin-left: 15px;
+  margin-top: 25px;
+  z-index: 101;
+}
+
+h1, h2{
+  font-family: 'Press Start 2P', cursive;
+}
+.websiteTitle:hover{
+  cursor:pointer;
+}
+
+.post-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 10px;
+}
+
+.post:hover{
+  box-shadow: 5px 2px 2px black;
+  transition: box-shadow 0.3s ease-in-out;
+  cursor:pointer;
+}
+
+.post .body {
+  min-height: 150px;
+}
+.post .body-text{
+  padding-left: 20px;
+  padding-right: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-word; 
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+
+}
+.post .title {
+  padding-left: 20px;
+  background-color: red;
+  padding-top: 10px;;
+  padding-bottom: 10px;
+}
+
+.post .username {
+  padding-left: 20px;
+  background-color: green;
+  padding-top: 10px;;
+  padding-bottom: 10px;
+}
+
+.left-header{
+}
+
+.right-header{
+  font-size: 18px;
+  padding-top: 25px;
+  margin-right: 15px;
+}
+.post-review-link{
+  margin-right: 15px;
+}
+.ReviewSection h2{
+  color: #0ea1db;
+}
+
+.CommentSection h2{
+  color: #0ea1db;
+}
+.ReviewSection {
+  color: #ffc107;
+}
+
+.createReviewPage{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100vw;
+  height: 50vw;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .post-input{
+  font-family: Arial, Helvetica, sans-serif;
+  word-wrap: break-word;
+  word-break: break-word; 
+  white-space: pre-wrap;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.form-container #post-field{
+  height:30px;
+  border-radius: 8px;
+  border: none;
+  
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form-container button:hover{
+  cursor:pointer;
+}
+
+span{
+  color: rgb(149, 0, 0);
+  padding-bottom: 5px;
+}
+
+.comment{
+  background-color: lightgray;
+  min-height: 75px;
+  margin-bottom: 5px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;     
+  white-space: pre-wrap;
+  padding: 10px;
+  font-size: 14px;
+
+}
+
+.returning-user {
+  display:inline;
   color: white;
+  margin-right: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.ReviewInfo {
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Author-Modifier{
+  padding-left: 5px;
+}
+
+.DeletePost{
+  margin-left: auto;
+}
+
+.custom-card{
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }
