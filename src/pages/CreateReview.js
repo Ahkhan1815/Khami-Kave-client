@@ -5,7 +5,8 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 
-const backendURL = "https://khami-kave-server.onrender.com";
+const { backendURL } = require('./componenets/constants');
+
 
 function CreateReview() {
     let navigate = useNavigate();

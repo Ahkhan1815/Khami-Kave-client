@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ItemsGrid from './ItemsGrid';
 
-const backendURL = "https://khami-kave-server.onrender.com";
+const { backendURL } = require('./componenets/constants');
 
 function Home() {
     const [listOfPosts, setListOfPosts] = useState([]);

@@ -5,6 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from 'react-router-dom';
 
+const { backendURL } = require('./componenets/constants');
+
 function Registration() {
     const initialValues = {
         username: "",
@@ -23,7 +25,7 @@ function Registration() {
     });
 
     const onSubmit = (data) => {
-        axios.post("http://localhost:3002/auth", data).then((response)=> {
+        axios.post(backendURL + "/auth", data).then((response)=> {
             if (response.data.error) {
                 alert(response.data.error);
             } else {

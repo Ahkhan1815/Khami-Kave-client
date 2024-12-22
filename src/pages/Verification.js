@@ -6,7 +6,7 @@ function Verification() {
     let { token } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:3002/auth/verification/${token}`).then((response) => {
+        axios.get(`https://khami-kave-server.onrender.com/auth/verification/${token}`).then((response) => {
             const token = localStorage.getItem("accessToken");
             if(token){
                 localStorage.removeItem("accessToken");

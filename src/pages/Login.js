@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+const { backendURL } = require('./componenets/constants');
+
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -12,7 +14,7 @@ function Login() {
 
     const login = () => {
         const data = { username: username, password: password };
-        axios.post("http://localhost:3002/auth/login", data).then((response) => {
+        axios.post(backendURL +"/auth/login", data).then((response) => {
             if (response.data.error) alert(response.data.error);
             else {
                 localStorage.setItem("accessToken", response.data);

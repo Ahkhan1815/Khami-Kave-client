@@ -5,6 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { jwtDecode } from "jwt-decode";
 
+const { backendURL } = require('./componenets/constants');
+
 function Post() {
     let { id } = useParams();
     const [postObject, setPostObject] = useState({});
@@ -21,7 +23,7 @@ function Post() {
 
     const onSubmit = (data, { resetForm }) => {
         axios.post(
-            "http://localhost:3002/comments",
+            backendURL + "/comments",
             { commentBody: data.commentBody, GamesPostId: id },
             {
                 headers: {
