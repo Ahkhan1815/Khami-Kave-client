@@ -4,8 +4,10 @@ import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { jwtDecode } from "jwt-decode";
+import { Filter } from 'glin-profanity';
 
 const { backendURL } = require('../components/constants');
+const profanityCheck = new Filter();
 
 function Post() {
     let { id } = useParams();
@@ -53,7 +55,7 @@ function Post() {
     };
 
     const validationSchema = Yup.object().shape({
-        commentBody: Yup.string().max(1000, "Comment is too long").required("Comment cannot be empty")
+        commentBody: Yup.string().max(1000, "Comment is too long").required("Comment cannot be empty").test("profanityCheck", "This title contains profanity", (value) => !profanityCheck.isProfane(value))
     });
 
     useEffect(() => {
