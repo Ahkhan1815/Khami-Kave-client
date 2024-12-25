@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
+
 
 
 const Header = () => {
     const navigate = useNavigate();
 
-    const navigateHome = () =>{
+    const navigateHome = () => {
         navigate('/');
     };
 
@@ -30,33 +31,40 @@ const Header = () => {
 
     const token = localStorage.getItem("accessToken");
     let username = "";
-    
-    if (token){
+
+    if (token) {
         const decodeToken = jwtDecode(token);
         username = decodeToken.username;
     }
-
     return (
-        <div class="header">
-            <div class="left-header"
-                onClick={navigateHome}
-            >
-                <h1 class="websiteTitle">Khami's Kave</h1>
-            </div>
-            <div class="right-header">
-                {!token && (
-                    <>
-                        <button class = "btn btn-outline-warning" onClick = {logIn}>Login</button>
-                        <button class = "btn btn-outline-warning" onClick = {Register}>Registration</button>
-                    </>
-                )}
-                {token && (<>
-                    <p class="returning-user" style={{color: "#0ea1db"}}>{username}</p>
-                    <button class = "btn btn-outline-warning pl-2" onClick = {postReview}>Post A Review</button>
-                    <button class = "btn btn-outline-warning" onClick = {logOut}> Log Out</button>
-                </>)}
-
-            </div>
+        <div>
+            <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#152238" }}>
+                <h1 className="navbar-brand text-warning ms-2 fs-2" href="#">Khami's Kave</h1>
+                <button className="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav ms-auto">
+                        {token && (<>
+                            <li className="nav-item">
+                                <button class="btn btn-outline-warning mb-2 me-2" onClick={postReview}>Post A Review</button>
+                            </li>
+                            <li className="nav-item">
+                                <button class="btn btn-outline-warning me-2" onClick={logOut}> Log Out: {username}</button>
+                            </li>
+                        </>)}
+                        {!token && (<>
+                            <li className="nav-item">
+                                <button class="btn btn-outline-warning mb-2 me-2">Login</button>
+                            </li>
+                            <li className="nav-item">
+                                <button class="btn btn-outline-warning">Registration</button>
+                            </li>
+                        </>)}
+                    </ul>
+                </div>
+            </nav>
+            <hr style={{ margin:'0px', border: '2px solid #0ea1db' }}></hr>
         </div>
     );
 };
