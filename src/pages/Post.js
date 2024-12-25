@@ -50,6 +50,13 @@ function Post() {
             navigate("/");
         })
     }
+
+    const deleteComment = (id) => {
+        console.log(id);
+        axios.delete(`https://khami-kave-server.onrender.com/comments/${id}`).then((response) => {
+            navigate(0);
+        })
+    }
     const initialValues = {
         commentBody: ""
     };
@@ -134,15 +141,26 @@ function Post() {
                         </Formik>
                     </div>
                     {comments.map((comment, key) => {
-                        return <div key={key} className="card comment-card mb-2" style={{ backgroundColor: "#472a57", color: "#de6d47"}}>
-                            <div className='card-header'style={{ backgroundColor: "#472a57"}}>
+                        return <div key={key} className="card comment-card mb-2" style={{ backgroundColor: "#472a57", color: "#de6d47" }}>
+                            <div className='card-header' style={{ backgroundColor: "#472a57" }}>
                                 {comment.username}
+                                {(comment.username == tokenUsername) && (<>
+                                    &nbsp;(your comment)
+                            </>
+                            )}
                             </div>
-                            <div className="card-body" style={{ backgroundColor: "#7e5a91"}}>
+                            <div className="card-body" style={{ backgroundColor: "#7e5a91" }}>
                                 <div className="card-text">
                                     {comment.commentBody}
                                 </div>
                             </div>
+                            {(comment.username == tokenUsername) && (<>
+                                <div className='card-header' style={{ backgroundColor: "#472a57" }}>
+                                <button className="btn btn-outline-danger" onClick={() => deleteComment(comment.id)}>Delete Comment</button>
+                                </div>
+                            </>
+                            )}
+
                         </div>
                     })}
                 </div>
