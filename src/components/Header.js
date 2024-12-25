@@ -39,7 +39,7 @@ const Header = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#152238" }}>
-                <h1 className="navbar-brand text-warning ms-2 fs-2" href="#">Khami's Kave</h1>
+                <h1 className="navbar-brand text-warning ms-2 fs-2" onClick={navigateHome}>Khami's Kave</h1>
                 <button className="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -55,10 +55,10 @@ const Header = () => {
                         </>)}
                         {!token && (<>
                             <li className="nav-item">
-                                <button class="btn btn-outline-warning mb-2 me-2">Login</button>
+                                <button class="btn btn-outline-warning mb-2 me-2" onClick={logIn}>Login</button>
                             </li>
                             <li className="nav-item">
-                                <button class="btn btn-outline-warning">Registration</button>
+                                <button class="btn btn-outline-warning" onClick={Register}>Registration</button>
                             </li>
                         </>)}
                     </ul>
