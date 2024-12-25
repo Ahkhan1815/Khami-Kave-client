@@ -76,16 +76,16 @@ function Post() {
         <div className='container pt-4'>
             <div className='ReviewSection'>
                 <h2>{postObject.title}</h2>
-                <hr style={{ border: '1px solid #0ea1db' }}></hr>
+                <hr style={{ border: '1px solid #de6d47' }}></hr>
                 <div className="ReviewInfo">
                     <h3 className='fs-5'>Review By: {postObject.username}</h3>
-                    {postObject.username == tokenUsername && (<>
+                    {(postObject.username == tokenUsername) && (<>
                         <h5 className="Author-Modifier">(Your Post)</h5>
                         <button className="DeletePost btn btn-outline-danger" onClick={() => deletePost(id)}>Delete Post</button>
                     </>
                     )}
                 </div>
-                <hr style={{ border: '1px solid #0ea1db' }}></hr>
+                <hr style={{ border: '1px solid #de6d47' }}></hr>
                 <p>{postObject.postText}</p>
                 {postObject.link ? (
                     <a
@@ -104,9 +104,9 @@ function Post() {
             </div>
             <div className='CommentSection'>
                 <div className="allComments">
-                    <hr style={{ border: '1px solid #0ea1db' }}></hr>
+                    <hr style={{ border: '1px solid #de6d47' }}></hr>
                     <h2>Comments</h2>
-                    <hr style={{ border: '1px solid #0ea1db' }}></hr>
+                    <hr style={{ border: '1px solid #de6d47' }}></hr>
                     <div className='addComments'>
                         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
                             <Form>
@@ -134,11 +134,11 @@ function Post() {
                         </Formik>
                     </div>
                     {comments.map((comment, key) => {
-                        return <div key={key} className="card comment-card mb-2">
-                            <div className='card-header'>
+                        return <div key={key} className="card comment-card mb-2" style={{ backgroundColor: "#472a57", color: "#de6d47"}}>
+                            <div className='card-header'style={{ backgroundColor: "#472a57"}}>
                                 {comment.username}
                             </div>
-                            <div className="card-body">
+                            <div className="card-body" style={{ backgroundColor: "#7e5a91"}}>
                                 <div className="card-text">
                                     {comment.commentBody}
                                 </div>

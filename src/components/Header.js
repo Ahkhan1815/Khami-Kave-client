@@ -38,8 +38,8 @@ const Header = () => {
     }
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#152238" }}>
-                <h1 className="navbar-brand text-warning ms-2 fs-2" onClick={navigateHome}>Khami's Kave</h1>
+            <nav className="navbar navbar-expand-lg navbar-light" style={{ backgroundColor: "#220830" }}>
+                <h1 className="navbar-brand text-warning ms-2 fs-2 header" onClick={navigateHome}>Khami's Kave</h1>
                 <button className="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -64,7 +64,7 @@ const Header = () => {
                     </ul>
                 </div>
             </nav>
-            <hr style={{ margin:'0px', border: '2px solid #0ea1db' }}></hr>
+            <hr style={{ margin:'0px', border: '2px solid #de6d47' }}></hr>
         </div>
     );
 };

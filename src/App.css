@@ -1,36 +1,23 @@
 .App {
   text-align: left;
   font-family: 'Nunito', sans-serif;
-  background-color: #192841;
+  background-color: #281136;
 }
 
 html, body{
   margin: 0;
-  background-color: #192841;
+  background-color: #281136;
 }
 
 .type-banner{
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 15px;
-  color: #0ea1db;
+  color: #d44070;
 }
 
-.header{
-  background-color: #152238;
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position:fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 100;
-
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-  border-bottom-color: #0ea1db;
+.header:hover{
+  cursor:pointer;
 }
 
 .websiteTitle{
@@ -105,11 +92,11 @@ h1, h2{
   margin-right: 15px;
 }
 .ReviewSection h2{
-  color: #0ea1db;
+  color: #d44070;
 }
 
 .CommentSection h2{
-  color: #0ea1db;
+  color: #d44070;
 }
 .ReviewSection {
   color: #ffc107;
@@ -200,6 +187,16 @@ span{
   overflow: hidden;
 }
 
+.custom-card:hover{
+  box-shadow: 5px 2px 2px #d44070;
+  transition: box-shadow 0.3s ease-in-out;
+  cursor:pointer;
+}
+
+.home-card-header{
+  font-family: 'Press Start 2P', cursive;
+}
+
 .card-text{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -208,3 +205,4 @@ span{
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
 }
+
