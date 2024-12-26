@@ -13,15 +13,16 @@ function Post() {
     let { id } = useParams();
     const [postObject, setPostObject] = useState({});
     const [comments, setComments] = useState([]);
+    let adminStatus= false;
     let navigate = useNavigate();
 
     const token = localStorage.getItem("accessToken");
     let tokenUsername = "";
-    let adminStatus = false;
 
     if (token) {
         const decodeToken = jwtDecode(token);
         tokenUsername = decodeToken.username;
+        console.log(decodeToken.isAdmin)
         adminStatus = decodeToken.isAdmin;
     }
 
@@ -92,10 +93,9 @@ function Post() {
                     <h3 className='fs-5'>Review By: {postObject.username}</h3>
                     {(postObject.username == tokenUsername)&& (<>
                         <h5 className="Author-Modifier">(Your Post)</h5>
-                        <button className="DeletePost btn btn-outline-danger" onClick={() => deletePost(id)}>Delete Post</button>
                     </>
                     )}
-                    {(postObject.username == tokenUsername)|| (adminStatus) && (<>
+                    {(postObject.username == tokenUsername|| adminStatus) && (<>
                         <button className="DeletePost btn btn-outline-danger" onClick={() => deletePost(id)}>Delete Post</button>
                     </>
                     )}
@@ -162,7 +162,7 @@ function Post() {
                                     {comment.commentBody}
                                 </div>
                             </div>
-                            {(comment.username == tokenUsername) || (adminStatus) && (<>
+                            {(comment.username == tokenUsername || adminStatus) && (<>
                                 <div className='card-header' style={{ backgroundColor: "#472a57" }}>
                                 <button className="btn btn-outline-danger" onClick={() => deleteComment(comment.id)}>Delete Comment</button>
                                 </div>
