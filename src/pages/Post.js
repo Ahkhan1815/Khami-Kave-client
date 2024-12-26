@@ -56,7 +56,7 @@ function Post() {
         console.log(id);
         console.log("test");
         axios.delete(`https://khami-kave-server.onrender.com/comments/${id}`).then((response) => {
-            navigate("/");
+            navigate(0);
         })
     }
     const initialValues = {
