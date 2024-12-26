@@ -53,6 +53,7 @@ function Post() {
 
     const deleteComment = (id) => {
         console.log(id);
+        console.log("test");
         axios.delete(`https://khami-kave-server.onrender.com/comments/${id}`).then((response) => {
             navigate("/");
         })
