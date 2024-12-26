@@ -17,7 +17,7 @@ function Post() {
 
     const token = localStorage.getItem("accessToken");
     let tokenUsername = "";
-    const adminStatus = false;
+    let adminStatus = false;
 
     if (token) {
         const decodeToken = jwtDecode(token);
