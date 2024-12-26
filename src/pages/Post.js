@@ -17,10 +17,12 @@ function Post() {
 
     const token = localStorage.getItem("accessToken");
     let tokenUsername = "";
+    const adminStatus = false;
 
     if (token) {
         const decodeToken = jwtDecode(token);
         tokenUsername = decodeToken.username;
+        adminStatus = decodeToken.isAdmin;
     }
 
     const onSubmit = (data, { resetForm }) => {
@@ -88,8 +90,12 @@ function Post() {
                 <hr style={{ border: '1px solid #de6d47' }}></hr>
                 <div className="ReviewInfo">
                     <h3 className='fs-5'>Review By: {postObject.username}</h3>
-                    {(postObject.username == tokenUsername) && (<>
+                    {(postObject.username == tokenUsername)&& (<>
                         <h5 className="Author-Modifier">(Your Post)</h5>
+                        <button className="DeletePost btn btn-outline-danger" onClick={() => deletePost(id)}>Delete Post</button>
+                    </>
+                    )}
+                    {(postObject.username == tokenUsername)|| (adminStatus) && (<>
                         <button className="DeletePost btn btn-outline-danger" onClick={() => deletePost(id)}>Delete Post</button>
                     </>
                     )}
@@ -156,7 +162,7 @@ function Post() {
                                     {comment.commentBody}
                                 </div>
                             </div>
-                            {(comment.username == tokenUsername) && (<>
+                            {(comment.username == tokenUsername) || (adminStatus) && (<>
                                 <div className='card-header' style={{ backgroundColor: "#472a57" }}>
                                 <button className="btn btn-outline-danger" onClick={() => deleteComment(comment.id)}>Delete Comment</button>
                                 </div>
