@@ -38,6 +38,7 @@ function Post() {
                     alert(response.data.error);
                 } else {
                     const commentToAdd = { id: response.data.id, commentBody: data.commentBody, username: response.data.username };
+                    console.log(response.data.id);
                     setComments((comments) => [...comments, commentToAdd]);
                     resetForm();
                 }
