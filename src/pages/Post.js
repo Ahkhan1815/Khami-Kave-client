@@ -22,7 +22,7 @@ function Post() {
     if (token) {
         const decodeToken = jwtDecode(token);
         tokenUsername = decodeToken.username;
-        console.log(decodeToken.isAdmin)
+        console.log(decodeToken);
         adminStatus = decodeToken.isAdmin;
     }
 
@@ -79,7 +79,7 @@ function Post() {
     };
 
     const validationSchema = Yup.object().shape({
-        commentBody: Yup.string().max(1000, "Comment is too long").required("Comment cannot be empty").test("profanityCheck", "This title contains profanity", (value) => !profanityCheck.isProfane(value))
+        commentBody: Yup.string().max(1000, "Comment is too long").required("Comment cannot be empty").test("profanityCheck", "This comment contains profanity", (value) => !profanityCheck.isProfane(value))
     });
 
     useEffect(() => {
