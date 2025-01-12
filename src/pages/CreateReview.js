@@ -39,9 +39,9 @@ function CreateReview() {
     }
 
     const validationSchema = Yup.object().shape({
-        title: Yup.string().required("Media title is required").test("profanityCheck", "This title contains profanity", (value) => !profanityCheck.isProfane(value)),
-        postText: Yup.string().required("Review is required").test("profanityCheck", "This post contains profanity", (value) => !profanityCheck.isProfane(value)),
-        link: Yup.string().required("Link is required").test("profanityCheck", "This link contains profanity", (value) => !profanityCheck.isProfane(value)),
+        title: Yup.string().required("Media title is required"),
+        postText: Yup.string().required("Review is required"),
+        link: Yup.string().required("Link is required"),
     });
 
     return (
