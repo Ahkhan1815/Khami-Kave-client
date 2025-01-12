@@ -34,7 +34,11 @@ function CreateReview() {
                 },
             }
         ).then((response) => {
+            if (response.data.error) {
+                alert(response.data.error);
+            } else {
             navigate("/");
+            }
         });
     }
 
