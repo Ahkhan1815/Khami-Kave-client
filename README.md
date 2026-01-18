@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Khami's Cave - Game Review Platform (Client Folder)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link: https://khami-kave-client.onrender.com/
 
-## Available Scripts
+Overview: Khami's Kave is a simple game review platform where users can create accounts, post game reviews, and comment on each other's posts. The app is hosted on Render.
 
-In the project directory, you can run:
+Purpose: This was my first full-stack project so the learning goals were centered around understanding REST APIs. The development process also taught me about the security principles behind handling user logins (ie. new accounts have to be verfied via email to post). Hosting this app on render also introduced me to CI/CD pipelines and log monitoring as Render's resources implement these tools.
 
-### `npm start`
+# Features:
+```
+Account verification via Nodemailer
+Comment on other's game reviews
+Mobile-friendly responsive UI
+Deployed on the cloud (Render)
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Tech Stack:
+```
+Frontend: React, Bootstrap
+Backend: Node.js (Express)
+Database: PostgreSQL
+Deployment: Render
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# What I Learned:
+```
+Frontend-Backend communication via REST APIS
+Website styling with Bootstrap
+Relational database models (Users-posts)
+Hosting apps via services like Render
+```
 
-### `npm test`
+# Future Plans
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As of now this project is finished. It served it's purpose as my entry into full-stack development. This project has a lot of room to improve, especially because I've learned a lot since its release.
 
-### `npm run build`
+```
+Features I would add:
+Genre tags so users can get analytics about their playing habits
+AI game reccomendations based on liked games
+Pull game titles from a database to allow for grouped game reviews
+Voting system for game reviews
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
